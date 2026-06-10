@@ -4,7 +4,7 @@ const { Server } = require('socket.io')
 
 const httpServer = createServer()
 const io = new Server(httpServer, {
-  path: '/',
+  path: '/socket.io',
   cors: {
     origin: "*",
     methods: ["GET", "POST"]
@@ -263,7 +263,7 @@ io.on('connection', (socket) => {
   })
 })
 
-const PORT = process.env.PORT || 3003
+const PORT = process.env.PORT || 3099
 httpServer.listen(PORT, () => {
   console.log(`[Chat] Socket.io server running on port ${PORT}`)
 })
